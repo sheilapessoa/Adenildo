@@ -10813,9 +10813,8 @@
             const eventId = (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function')
                 ? crypto.randomUUID()
                 : `evt_${Date.now()}_${Math.floor(Math.random() * 1_000_000)}`;
-
             const metaInfo = {
-                source: 'cardapio-sheets',
+                source: 'cardapio',
                 version: APP_VERSION,
                 origin: window.location.origin || null,
                 user_agent: (typeof navigator !== 'undefined' && navigator?.userAgent) ? navigator.userAgent : null
@@ -10911,7 +10910,7 @@
 
             const postHeaders = {
                 'Content-Type': 'application/json',
-                'X-Requested-With': 'CardapioSheets',
+                'X-Requested-With': 'Cardapio',
                 'X-Webhook-Event': eventId,
                 'X-Cardapio-Version': APP_VERSION
             };
@@ -13156,7 +13155,7 @@
 
         /**
  * ====================================================================
- * SISTEMA DE LOCALSTORAGE - CARDÁPIO SHEETS V3.8.0
+ * SISTEMA DE LOCALSTORAGE - CARDÁPIO  V3.8.0
  * ====================================================================
  * 
  * Sistema robusto de persistência de dados usando localStorage
